@@ -1,0 +1,1757 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Колекційні та рідкісні сорти винограду від Геннадія. Купити елітні саджанці винограду з доставкою по Україні">
+    <meta name="keywords" content="виноград, саджанці, кишмиш, колекційні сорти, рідкісні сорти, виноградник">
+    <title>Геннадій Виноград — Колекційні та рідкісні сорти винограду</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://i.postimg.cc/pr6p2WLx/krasnyi-vinograd-na-vinogradnike-(1).jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Маленькая кнопка YouTube слева */
+        .youtube-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: clamp(0.9em, 2vw, 1.1em);
+            box-shadow: 0 4px 15px rgba(255,0,0,0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            z-index: 999;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .youtube-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,0,0,0.6);
+            border-color: white;
+        }
+
+        /* Языковой переключатель по центру в шапке */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 1002;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 0.8em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .lang-btn.active {
+            background: rgba(74, 124, 89, 0.8);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        header {
+            background: rgba(0,0,0,0.4);
+            color: white;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        h1 { 
+            font-size: clamp(2.5em, 5vw, 3.5em); 
+            margin: 0; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            color: white;
+        }
+
+        .slogan { 
+            font-size: clamp(1.2em, 3vw, 1.8em); 
+            margin: 20px 0; 
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+            opacity: 0.95;
+        }
+
+        .contact-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .viber-header {
+            background: linear-gradient(135deg, #7360F2 0%, #8B7AF3 100%);
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: clamp(0.9em, 2vw, 1.1em);
+            box-shadow: 0 4px 15px rgba(115,96,242,0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .viber-header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(115,96,242,0.6);
+            border-color: white;
+        }
+
+        .viber-header img { 
+            width: 28px; 
+            height: 28px; 
+        }
+
+        /* Корзина - компактная версия */
+        #cart-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 15px;
+            color: #333;
+            width: 300px;
+            max-width: 90vw;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            display: none; /* Скрыта по умолчанию */
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        #cart-container.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #cart h3 { 
+            margin-top:0; 
+            font-size:1.2em; 
+            color: #4a7c59;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(74,124,89,0.2);
+        }
+
+        .cart-item:last-child { border-bottom: none; }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: #4a7c59;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background: #3a6b49;
+            transform: scale(1.1);
+        }
+
+        .remove-item {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+
+        .remove-item:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+
+        #cart-total { 
+            font-weight:bold; 
+            margin: 20px 0 15px; 
+            font-size: 1.2em; 
+            color: #4a7c59;
+            text-align: right;
+            padding-top: 15px;
+            border-top: 2px solid #4a7c59;
+        }
+
+        #copyOrderBtn {
+            background: linear-gradient(135deg, #7360F2 0%, #8B7AF3 100%);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #copyOrderBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(115,96,242,0.4);
+        }
+
+        /* Кнопка корзины - только иконка с количеством */
+        .cart-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(74, 124, 89, 0.9);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+            backdrop-filter: blur(5px);
+        }
+
+        .cart-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            background: rgba(74, 124, 89, 1);
+        }
+
+        #cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .products-section {
+            background: white;
+            margin: 40px auto;
+            padding: 40px 20px 80px;
+            max-width: 1400px;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4a7c59;
+            font-size: clamp(2em, 4vw, 2.8em);
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #4a7c59, #8B7AF3);
+            border-radius: 2px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: #f8f9fa;
+            border: 2px solid #4a7c59;
+            border-radius: 50px;
+            color: #4a7c59;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #4a7c59;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74,124,89,0.3);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product:hover { 
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        /* ГАЛЕРЕЯ ДЛЯ ТОВАРА */
+        .product-gallery {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            cursor: pointer;
+        }
+
+        .product-gallery img.active {
+            opacity: 1;
+        }
+
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .gallery-btn {
+            background: rgba(74, 124, 89, 0.3);
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+            font-size: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-btn.active {
+            background: #4a7c59;
+            transform: scale(1.2);
+        }
+
+        .gallery-btn:hover {
+            background: rgba(74, 124, 89, 0.7);
+        }
+
+        /* Дополнительные фото превью */
+        .gallery-preview {
+            display: flex;
+            gap: 5px;
+            padding: 0 15px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .preview-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .preview-img:hover, .preview-img.active {
+            border-color: #4a7c59;
+            transform: scale(1.05);
+        }
+
+        .gallery-fullscreen-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-fullscreen-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* МОДАЛЬНОЕ ОКНО ГАЛЕРЕИ */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 0;
+            width: 95%;
+            max-width: 1000px;
+            height: 95vh;
+            margin-top: 2.5vh;
+        }
+
+        #modal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #4a7c59;
+            transform: scale(1.2);
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            padding: 16px;
+            transition: all 0.3s ease;
+            user-select: none;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(74, 124, 89, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .modal-gallery-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .modal-gallery-btn {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-gallery-btn.active {
+            background: #4a7c59;
+            transform: scale(1.2);
+        }
+
+        .product h3 { 
+            color:#4a7c59; 
+            padding:20px 15px 10px; 
+            margin:0; 
+            font-size:1.4em; 
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product p { 
+            padding:0 15px 20px; 
+            font-size:0.95em;
+            color: #666;
+            min-height: 80px;
+        }
+
+        .product-price {
+            font-size: 1.5em;
+            color: #4a7c59;
+            font-weight: bold;
+            margin: 10px 0;
+            display: block;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            padding: 0 15px 20px;
+        }
+
+        .product button.add-to-cart {
+            flex: 1;
+            background: linear-gradient(135deg, #4a7c59 0%, #5a8c69 100%);
+            color:white;
+            padding:14px;
+            border:none;
+            cursor:pointer;
+            font-weight:bold;
+            border-radius:10px;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+
+        .product button.add-to-cart:hover {
+            background: linear-gradient(135deg, #3a6b49 0%, #4a7c59 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74,124,89,0.3);
+        }
+
+        .product button.info-btn {
+            background: #f8f9fa;
+            color: #4a7c59;
+            border: 2px solid #4a7c59;
+            padding: 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .product button.info-btn:hover {
+            background: #4a7c59;
+            color: white;
+        }
+
+        .video-wrapper { 
+            margin:15px 0; 
+            display:none; 
+            position:relative; 
+            padding-bottom:56.25%; 
+            height:0; 
+            overflow:hidden;
+            border-radius: 10px;
+            background: #000;
+        }
+
+        .video-wrapper iframe { 
+            position:absolute; 
+            top:0; 
+            left:0; 
+            width:100%; 
+            height:100%; 
+            border:0; 
+        }
+
+        .show-video { 
+            display:block; 
+            margin:10px 15px 20px; 
+            background: linear-gradient(135deg, #7360F2 0%, #8B7AF3 100%);
+            color:white; 
+            padding:12px 25px; 
+            border:none; 
+            border-radius:50px; 
+            cursor:pointer; 
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: calc(100% - 30px);
+        }
+
+        .show-video:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(115,96,242,0.3);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #4a7c59 0%, #3a6b49 100%);
+            color:white;
+            text-align:center;
+            padding:50px 20px;
+            margin-top:50px;
+            font-size:1.1em;
+        }
+
+        .product-description {
+            display: none;
+            padding: 20px;
+            text-align: left;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            margin: 15px;
+            border-left: 4px solid #4a7c59;
+        }
+
+        .product-description h4 {
+            color: #4a7c59;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .product-description ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .product-description li {
+            margin-bottom: 8px;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4a7c59;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1001;
+            animation: slideInRight 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .youtube-button {
+                top: 15px;
+                left: 15px;
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            
+            .language-switcher {
+                top: 15px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .lang-btn {
+                padding: 5px 10px;
+                font-size: 0.75em;
+            }
+            
+            header {
+                padding: 100px 15px 60px;
+            }
+            
+            .contact-buttons {
+                position: static;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            
+            .viber-header {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            
+            #cart-container {
+                position: fixed;
+                top: 80px;
+                right: 15px;
+                left: 15px;
+                width: auto;
+                max-width: none;
+            }
+            
+            .cart-toggle {
+                top: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3em;
+            }
+            
+            #cart-count {
+                width: 20px;
+                height: 20px;
+                font-size: 0.7em;
+            }
+            
+            .filters {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 20px;
+                font-size: 0.9em;
+            }
+            
+            .product-gallery {
+                height: 220px;
+            }
+            
+            .preview-img {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .prev, .next {
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+            }
+            
+            .close-modal {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .youtube-button {
+                padding: 8px 15px;
+                font-size: 0.8em;
+                gap: 5px;
+            }
+            
+            .youtube-button i {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Маленькая фиксированная кнопка YouTube слева -->
+<a href="https://youtube.com/@gen_vin?si=Sv-_MztqFarN_qWV" target="_blank" class="youtube-button">
+    <i class="fab fa-youtube"></i>
+    <span class="lang" data-uk="YouTube канал" data-ru="YouTube канал">YouTube канал</span>
+</a>
+
+<header>
+    <div class="contact-buttons">
+        <a href="viber://chat?number=+380683672422" class="viber-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Viber_2023.svg" alt="Viber">
+            Замовити у Viber: 068 367 24 22
+        </a>
+    </div>
+    
+    <!-- Языковой переключатель по центру в шапке -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('uk')">УКР</button>
+        <button class="lang-btn" onclick="changeLanguage('ru')">РУС</button>
+    </div>
+    
+    <h1 class="site-title">
+        <span class="lang" data-uk="Геннадій Виноград" data-ru="Геннадий Виноград">Геннадій Виноград</span>
+    </h1>
+    <p class="slogan lang" data-uk="Колекційні та рідкісні сорти винограду 💚" 
+       data-ru="Коллекционные и редкие сорта винограда 💚">
+       Колекційні та рідкісні сорти винограду 💚
+    </p>
+</header>
+
+<!-- Кнопка корзины (только иконка) -->
+<div class="cart-toggle" onclick="toggleCart()">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cart-count">0</span>
+</div>
+
+<!-- Корзина (скрыта по умолчанию) -->
+<div id="cart-container">
+    <h3><i class="fas fa-shopping-cart"></i> <span class="lang" data-uk="Ваш кошик" data-ru="Ваша корзина">Ваш кошик</span></h3>
+    <div id="cart-items"><span class="lang" data-uk="Поки що порожньо" data-ru="Пока пусто">Поки що порожньо</span></div>
+    <div id="cart-total"><span class="lang" data-uk="Сума:" data-ru="Сумма:">Сума:</span> 0 ₴</div>
+    <button id="copyOrderBtn" onclick="sendToViber()">
+        <i class="fab fa-viber"></i>
+        <span class="lang" data-uk="Надіслати замовлення у Viber" data-ru="Отправить заказ в Viber">Надіслати замовлення у Viber</span>
+    </button>
+</div>
+
+<!-- Модальное окно для галереи -->
+<div id="gallery-modal" class="gallery-modal">
+    <span class="close-modal" onclick="closeGallery()">&times;</span>
+    <div class="modal-content">
+        <img id="modal-img" src="" alt="">
+        <a class="prev" onclick="changeModalPhoto(-1)">&#10094;</a>
+        <a class="next" onclick="changeModalPhoto(1)">&#10095;</a>
+        <div class="modal-gallery-controls" id="modal-controls"></div>
+    </div>
+</div>
+
+<!-- Товари на білому фоні -->
+<div class="products-section">
+    <div class="container">
+        <h2><span class="lang" data-uk="Мої сорти винограду" data-ru="Мои сорта винограда">Мої сорти винограду</span></h2>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('all')">
+                <span class="lang" data-uk="Всі сорти" data-ru="Все сорта">Всі сорти</span>
+            </button>
+            <button class="filter-btn" onclick="filterProducts('new')">
+                <span class="lang" data-uk="Новинки" data-ru="Новинки">Новинки</span>
+            </button>
+        </div>
+        
+        <div class="products" id="products-container">
+
+            <!-- Кишмиш Шугра 48 -->
+            <div class="product" data-category="new">
+                <!-- Галерея с несколькими фото -->
+                <div class="product-gallery" data-gallery-id="shugra48">
+                    <!-- Основное фото -->
+                    <img src="https://i.postimg.cc/Jn71gSc0/midnight-beauty-seedless-black-grape-6843.jpg" 
+                         alt="Кишмиш Шугра 48" class="active" 
+                         onclick="openGallery('shugra48', 0)">
+                    <!-- Второе фото -->
+                    <img src="https://i.postimg.cc/C1ZFSktm/a0f4ae4b-6c18-470f-aed3-3797ecc3ed93.jpg" 
+                         alt="Кишмиш Шугра 48 фото 2" 
+                         onclick="openGallery('shugra48', 1)">
+                    <!-- Кнопка полноэкранного просмотра -->
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('shugra48', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <!-- Контролы галереи -->
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('shugra48', 0)">●</button>
+                    <button class="gallery-btn" onclick="changePhoto('shugra48', 1)">●</button>
+                </div>
+                
+                <!-- Превью фото -->
+                <div class="gallery-preview">
+                    <img src="https://i.postimg.cc/Jn71gSc0/midnight-beauty-seedless-black-grape-6843.jpg" 
+                         alt="Превью 1" class="preview-img active" 
+                         onclick="changePhoto('shugra48', 0)">
+                    <img src="https://i.postimg.cc/C1ZFSktm/a0f4ae4b-6c18-470f-aed3-3797ecc3ed93.jpg" 
+                         alt="Превью 2" class="preview-img" 
+                         onclick="changePhoto('shugra48', 1)">
+                </div>
+                
+                <h3>Кишмиш Шугра 48 (Sugra 48 seedless)</h3>
+                <p class="lang" data-uk="Класичний чорний кишмиш преміум-класу. Еталон якості з натурально великими ягодами" 
+                   data-ru="Классический черный кишмиш премиум-класса. Эталон качества с натурально крупными ягодами">
+                   Класичний чорний кишмиш преміум-класу
+                </p>
+                <span class="product-price">2000 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Кишмиш Шугра 48', 2000)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Термін дозрівання:" data-ru="Срок созревания:">Термін дозрівання:</strong> 
+                            <span class="lang" data-uk="середньоранній (серпень–вересень)" data-ru="среднеранний (август–сентябрь)">середньоранній</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Вага грона:" data-ru="Вес грозди:">Вага грона:</strong> 700–1200 г</li>
+                        <li><strong class="lang" data-uk="Вага ягоди:" data-ru="Вес ягоды:">Вага ягоди:</strong> 7–11 г</li>
+                        <li><strong class="lang" data-uk="Розмір ягоди:" data-ru="Размер ягоды:">Розмір ягоди:</strong> 22–28 мм</li>
+                        <li><strong class="lang" data-uk="Колір ягоди:" data-ru="Цвет ягоды:">Колір ягоди:</strong> 
+                            <span class="lang" data-uk="глибокий чорний" data-ru="глубокий черный">глибокий чорний</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Смак:" data-ru="Вкус:">Смак:</strong> 
+                            <span class="lang" data-uk="нейтрально-солодкий, гармонійний, з легкими фруктовими нотками" data-ru="нейтрально-сладкий, гармоничный, с легкими фруктовыми нотами">нейтрально-солодкий, гармонійний</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Консистенція:" data-ru="Консистенция:">Консистенція:</strong> 
+                            <span class="lang" data-uk="щільна, хрустка, соковита" data-ru="плотная, хрустящая, сочная">щільна, хрустка, соковита</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Сила росту:" data-ru="Сила роста:">Сила росту:</strong> 
+                            <span class="lang" data-uk="велика" data-ru="большая">велика</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Врожайність:" data-ru="Урожайность:">Врожайність:</strong> 
+                            <span class="lang" data-uk="висока та стабільна" data-ru="высокая и стабильная">висока та стабільна</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Особливості:" data-ru="Особенности:">Особливості:</strong> 
+                            <span class="lang" data-uk="безнасінний, відмінна транспортабельність, стійкий до розтріскування, тонка їстівна шкірка" data-ru="бессемянный, отличная транспортабельность, устойчив к растрескиванию, тонкая съедобная кожица">безнасінний, відмінна транспортабельність</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Походження:" data-ru="Происхождение:">Походження:</strong> 
+                            <span class="lang" data-uk="Sun World International (США), 1988 рік" data-ru="Sun World International (США), 1988 год">Sun World International (США), 1988 рік</span>
+                        </li>
+                    </ul>
+                    <p class="lang" data-uk="Кишмиш Шугра 48 — це еталон чорного кишмишу: подовжені блискучі чорні ягоди з хрустом і натуральною солодкістю, що ідеально виглядають на прилавку та зберігають свіжість тижнями. Один з найпопулярніших сортів серії Sugra, перевірений часом і ринком — надійний вибір для комерційного та приватного вирощування!" 
+                       data-ru="Кишмиш Шугра 48 — это эталон черного кишмиша: удлиненные блестящие черные ягоды с хрустом и натуральной сладостью, которые идеально выглядят на прилавке и сохраняют свежесть неделями. Один из самых популярных сортов серии Sugra, проверенный временем и рынком — надежный выбор для коммерческого и частного выращивания!">
+                       Еталон чорного кишмишу з відмінною транспортабельністю
+                    </p>
+                </div>
+            </div>
+
+            <!-- Кишмиш Чорнобаївка -->
+            <div class="product" data-category="new">
+                <div class="product-gallery" data-gallery-id="chornobaivka">
+                    <img src="https://i.postimg.cc/Y0Mqy0tv/youtu-be-nlf-Ub0j7EWI.jpg" 
+                         alt="Кишмиш Чорнобаївка" class="active" 
+                         onclick="openGallery('chornobaivka', 0)">
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('chornobaivka', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('chornobaivka', 0)">●</button>
+                </div>
+                
+                <div class="gallery-preview">
+                    <img src="https://i.postimg.cc/Y0Mqy0tv/youtu-be-nlf-Ub0j7EWI.jpg" 
+                         alt="Превью" class="preview-img active" 
+                         onclick="changePhoto('chornobaivka', 0)">
+                </div>
+                
+                <h3>Кишмиш Чорнобаївка</h3>
+                <p class="lang" data-uk="Символ стійкості та щедрості. Безнасінний сорт з великими гронами" 
+                   data-ru="Символ стойкости и щедрости. Бессемянный сорт с крупными гроздьями">
+                   Символ стійкості та щедрості. Безнасінний сорт з великими гронами
+                </p>
+                <span class="product-price">500 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Кишмиш Чорнобаївка', 500)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Термін дозрівання:" data-ru="Срок созревания:">Термін дозрівання:</strong> 
+                            <span class="lang" data-uk="ранній (серпень-вересень)" data-ru="ранний (август-сентябрь)">ранній (серпень-вересень)</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Вага грона:" data-ru="Вес грозди:">Вага грона:</strong> 650–900 г</li>
+                        <li><strong class="lang" data-uk="Вага ягоди:" data-ru="Вес ягоды:">Вага ягоди:</strong> 10–14 г</li>
+                        <li><strong class="lang" data-uk="Колір ягоди:" data-ru="Цвет ягоды:">Колір ягоди:</strong> 
+                            <span class="lang" data-uk="темно-синій" data-ru="темно-синий">темно-синій</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Смак:" data-ru="Вкус:">Смак:</strong> 
+                            <span class="lang" data-uk="солодкий, без кислинки" data-ru="сладкий, без кислинки">солодкий, без кислинки</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Особливості:" data-ru="Особенности:">Особливості:</strong> 
+                            <span class="lang" data-uk="безнасінний, висока врожайність" data-ru="бессемянный, высокая урожайность">безнасінний, висока врожайність</span>
+                        </li>
+                    </ul>
+                    <p class="lang" data-uk="Ідеальний для прямого вживання та виробництва родзинок." 
+                       data-ru="Идеален для прямого употребления и производства изюма.">
+                       Ідеальний для прямого вживання та виробництва родзинок.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Кишмиш Азак -->
+            <div class="product" data-category="new">
+                <div class="product-gallery" data-gallery-id="azak">
+                    <img src="https://i.postimg.cc/wvFxKvSp/vynohrad-kysh-mysh-tsymus-duzhe-ranniy-zhovtyy.jpg" 
+                         alt="Кишмиш Азак" class="active" 
+                         onclick="openGallery('azak', 0)">
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('azak', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('azak', 0)">●</button>
+                </div>
+                
+                <div class="gallery-preview">
+                    <img src="https://i.postimg.cc/wvFxKvSp/vynohrad-kysh-mysh-tsymus-duzhe-ranniy-zhovtyy.jpg" 
+                         alt="Превью" class="preview-img active" 
+                         onclick="changePhoto('azak', 0)">
+                </div>
+                
+                <h3>Кишмиш Азак</h3>
+                <p class="lang" data-uk="Ранній білий кишмиш з хрусткою соковитістю та гармонійним смаком" 
+                   data-ru="Ранний белый кишмиш с хрустящей сочностью и гармоничным вкусом">
+                   Ранній білий кишмиш з хрусткою соковитістю та гармонійним смаком
+                </p>
+                <span class="product-price">500 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Кишмиш Азак', 500)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Термін дозрівання:" data-ru="Срок созревания:">Термін дозрівання:</strong> 
+                            <span class="lang" data-uk="дуже ранній (початок серпня)" data-ru="очень ранний (начало августа)">дуже ранній (початок серпня)</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Вага грона:" data-ru="Вес грозди:">Вага грона:</strong> до 1000 г</li>
+                        <li><strong class="lang" data-uk="Розмір ягоди:" data-ru="Размер ягоды:">Розмір ягоди:</strong> 18–20 мм</li>
+                        <li><strong class="lang" data-uk="Колір ягоди:" data-ru="Цвет ягоды:">Колір ягоди:</strong> 
+                            <span class="lang" data-uk="янтарно-білий" data-ru="янтарно-белый">янтарно-білий</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Смак:" data-ru="Вкус:">Смак:</strong> 
+                            <span class="lang" data-uk="гармонійний, солодкий" data-ru="гармоничный, сладкий">гармонійний, солодкий</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Сила росту:" data-ru="Сила роста:">Сила росту:</strong> 
+                            <span class="lang" data-uk="середньо-сильна" data-ru="средне-сильная">середньо-сильна</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Autumn King -->
+            <div class="product" data-category="">
+                <div class="product-gallery" data-gallery-id="autumnking">
+                    <img src="https://i.postimg.cc/HxsTQKzJ/autumn-king2-dbd2a2f5d5c92b152cb7ebe1b5b464f8.jpg" 
+                         alt="Autumn King" class="active" 
+                         onclick="openGallery('autumnking', 0)">
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('autumnking', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('autumnking', 0)">●</button>
+                </div>
+                
+                <div class="gallery-preview">
+                    <img src="https://i.postimg.cc/HxsTQKzJ/autumn-king2-dbd2a2f5d5c92b152cb7ebe1b5b464f8.jpg" 
+                         alt="Превью" class="preview-img active" 
+                         onclick="changePhoto('autumnking', 0)">
+                </div>
+                
+                <h3>Autumn King (Ленд Крузер)</h3>
+                <p class="lang" data-uk="Пізній безнасінний сорт американської селекції з великими гронами" 
+                   data-ru="Поздний бессемянный сорт американской селекции с крупными гроздьями">
+                   Пізній безнасінний сорт американської селекції з великими гронами
+                </p>
+                <span class="product-price">250 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Autumn King', 250)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Термін дозрівання:" data-ru="Срок созревания:">Термін дозрівання:</strong> 
+                            <span class="lang" data-uk="пізній" data-ru="поздний">пізній</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Походження:" data-ru="Происхождение:">Походження:</strong> 
+                            <span class="lang" data-uk="американська селекція" data-ru="американская селекция">американська селекція</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Особливості:" data-ru="Особенности:">Особливості:</strong> 
+                            <span class="lang" data-uk="безнасінний, великі грона" data-ru="бессемянный, крупные гроздья">безнасінний, великі грона</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Смак:" data-ru="Вкус:">Смак:</strong> 
+                            <span class="lang" data-uk="солодкий, насичений" data-ru="сладкий, насыщенный">солодкий, насичений</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Зберігання:" data-ru="Хранение:">Зберігання:</strong> 
+                            <span class="lang" data-uk="добре зберігається" data-ru="хорошо хранится">добре зберігається</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Кишмиш Карліта -->
+            <div class="product" data-category="new">
+                <div class="product-gallery" data-gallery-id="carlita">
+                    <img src="https://i.postimg.cc/DfRdMKGF/carlita2-a61422a450ea2184ddb55a2b5cd0e30d.jpg" 
+                         alt="Carlita" class="active" 
+                         onclick="openGallery('carlita', 0)">
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('carlita', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('carlita', 0)">●</button>
+                </div>
+                
+                <div class="gallery-preview">
+                    <img src="https://i.postimg.cc/DfRdMKGF/carlita2-a61422a450ea2184ddb55a2b5cd0e30d.jpg" 
+                         alt="Превью" class="preview-img active" 
+                         onclick="changePhoto('carlita', 0)">
+                </div>
+                
+                <h3>Кишмиш Карліта</h3>
+                <p class="lang" data-uk="Інноваційний безнасінний сорт з яскраво-червоними ягодами" 
+                   data-ru="Инновационный бессемянный сорт с ярко-красными ягодами">
+                   Інноваційний безнасінний сорт з яскраво-червоними ягодами
+                </p>
+                <span class="product-price">400 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Carlita', 400)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Селекція:" data-ru="Селекция:">Селекція:</strong> Sheehan Genetics</li>
+                        <li><strong class="lang" data-uk="Вага грона:" data-ru="Вес грозди:">Вага грона:</strong> 
+                            <span class="lang" data-uk="дуже великі" data-ru="очень крупные">дуже великі</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Вага ягоди:" data-ru="Вес ягоды:">Вага ягоди:</strong> 7–12 г</li>
+                        <li><strong class="lang" data-uk="Колір ягоди:" data-ru="Цвет ягоды:">Колір ягоди:</strong> 
+                            <span class="lang" data-uk="яскраво-червоний" data-ru="ярко-красный">яскраво-червоний</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Смак:" data-ru="Вкус:">Смак:</strong> 
+                            <span class="lang" data-uk="солодкий, без кислинки" data-ru="сладкий, без кислинки">солодкий, без кислинки</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Зберігання:" data-ru="Хранение:">Зберігання:</strong> 
+                            <span class="lang" data-uk="понад 6 тижнів" data-ru="более 6 недель">понад 6 тижнів</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><i class="fas fa-seedling"></i> &copy; 2024 <span class="lang" data-uk="Геннадій Виноград. Колекційний виноградник" 
+        data-ru="Геннадий Виноград. Коллекционный виноградник">Геннадій Виноград. Колекційний виноградник</span> 💚</p>
+    <p style="margin-top: 10px; opacity: 0.9;">
+        <i class="fas fa-phone"></i> +380 68 367 24 22 | 
+        <i class="fab fa-viber"></i> <span class="lang" data-uk="Viber доступний" data-ru="Viber доступен">Viber доступний</span> |
+        <i class="fab fa-youtube"></i> <a href="https://youtube.com/@gen_vin?si=Sv-_MztqFarN_qWV" target="_blank" style="color: white; text-decoration: underline;">YouTube канал</a>
+    </p>
+</footer>
+
+<script>
+// Текущий язык
+let currentLanguage = 'uk';
+
+// Кошик тепер зберігає кількість кожного товару
+let cart = []; // [{name, price, quantity}]
+
+// Для управления показом корзины
+let cartVisible = false;
+
+// Для галереи
+let currentGallery = {
+    id: null,
+    images: [],
+    currentIndex: 0
+};
+
+function changeLanguage(lang) {
+    if (lang === currentLanguage) return;
+    
+    currentLanguage = lang;
+    
+    // Обновляем кнопки переключения языка
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.includes(lang === 'uk' ? 'УКР' : 'РУС')) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Обновляем все текстовые элементы с классом lang
+    document.querySelectorAll('.lang').forEach(element => {
+        const ukText = element.getAttribute('data-uk');
+        const ruText = element.getAttribute('data-ru');
+        element.textContent = lang === 'uk' ? ukText : ruText;
+    });
+    
+    // Обновляем текст уведомлений в корзине
+    renderCart();
+    
+    // Сохраняем язык в localStorage
+    localStorage.setItem('grapeLanguage', lang);
+    
+    // Показываем уведомление
+    showNotification(lang === 'uk' ? 'Мову змінено на українську' : 'Язык изменен на русский');
+}
+
+function addToCart(name, price) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ name, price, quantity: 1 });
+    }
+    renderCart();
+    showNotification(currentLanguage === 'uk' 
+        ? `Додано: ${name}` 
+        : `Добавлено: ${name}`);
+    
+    // Показываем корзину на 3 секунды при добавлении товара
+    if (!cartVisible) {
+        showCartTemporarily();
+    }
+}
+
+function removeFromCart(name) {
+    const index = cart.findIndex(item => item.name === name);
+    if (index !== -1) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity -= 1;
+            showNotification(currentLanguage === 'uk'
+                ? `Зменшено кількість: ${name}`
+                : `Уменьшено количество: ${name}`);
+        } else {
+            cart.splice(index, 1);
+            showNotification(currentLanguage === 'uk'
+                ? `Видалено: ${name}`
+                : `Удалено: ${name}`);
+        }
+    }
+    renderCart();
+}
+
+function updateQuantity(name, change) {
+    const item = cart.find(item => item.name === name);
+    if (item) {
+        item.quantity += change;
+        if (item.quantity < 1) {
+            removeFromCart(name);
+            return;
+        }
+        renderCart();
+    }
+}
+
+function renderCart() {
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const cartCount = document.getElementById('cart-count');
+
+    if (cart.length === 0) {
+        const emptyText = currentLanguage === 'uk' 
+            ? 'Поки що порожньо' 
+            : 'Пока пусто';
+        cartItems.innerHTML = `<div style="text-align: center; padding: 20px; color: #666;">
+            <i class="fas fa-shopping-cart" style="font-size: 2em; margin-bottom: 10px; opacity: 0.5;"></i>
+            <p>${emptyText}</p>
+        </div>`;
+        
+        const totalText = currentLanguage === 'uk' ? 'Сума:' : 'Сумма:';
+        cartTotal.innerHTML = `<strong>${totalText} 0 ₴</strong>`;
+        cartCount.textContent = '0';
+        cartCount.style.display = 'none';
+        return;
+    }
+
+    let total = 0;
+    let itemCount = 0;
+    let html = '';
+
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        itemCount += item.quantity;
+        
+        html += `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <strong>${item.name}</strong><br>
+                    <small>${item.price} ₴ × ${item.quantity} = ${itemTotal} ₴</small>
+                </div>
+                <div class="cart-item-controls">
+                    <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
+                    <span style="min-width: 30px; text-align: center;">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
+                    <button class="remove-item" onclick="removeFromCart('${item.name}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+
+    cartItems.innerHTML = html;
+    const totalText = currentLanguage === 'uk' ? 'Сума:' : 'Сумма:';
+    cartTotal.innerHTML = `<strong>${totalText} ${total} ₴</strong>`;
+    cartCount.textContent = itemCount;
+    cartCount.style.display = 'inline';
+}
+
+function sendToViber() {
+    if (cart.length === 0) {
+        showNotification(currentLanguage === 'uk' 
+            ? 'Кошик порожній!' 
+            : 'Корзина пуста!', 'error');
+        return;
+    }
+
+    const orderText = currentLanguage === 'uk' 
+        ? 'Замовлення з сайту Геннадій Виноград' 
+        : 'Заказ с сайта Геннадий Виноград';
+    const totalText = currentLanguage === 'uk' 
+        ? 'Загальна сума' 
+        : 'Общая сумма';
+    
+    let text = `🍇 ${orderText} 🍇\n\n`;
+    let total = 0;
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        text += `${item.quantity} × ${item.name} — ${itemTotal} ₴\n`;
+    });
+    text += `\n💰 ${totalText}: ${total} ₴`;
+    text += `\n\n📺 YouTube канал: https://youtube.com/@gen_vin`;
+
+    // Скорочення тексту для Viber
+    if (text.length > 1000) {
+        text = text.substring(0, 997) + '...';
+    }
+
+    const encodedText = encodeURIComponent(text);
+    const phoneNumber = "+380683672422";
+    const viberLink = `viber://chat?number=${phoneNumber}&text=${encodedText}`;
+
+    navigator.clipboard.writeText(text).then(() => {
+        showNotification(currentLanguage === 'uk' 
+            ? 'Замовлення скопійовано! Відкривається Viber...' 
+            : 'Заказ скопирован! Открывается Viber...');
+        setTimeout(() => {
+            window.location.href = viberLink;
+        }, 1500);
+    }).catch(err => {
+        console.error('Помилка копіювання: ', err);
+        showNotification(currentLanguage === 'uk' 
+            ? 'Відкривається Viber...' 
+            : 'Открывается Viber...');
+        window.location.href = viberLink;
+    });
+}
+
+function toggleDescription(button) {
+    const product = button.closest('.product');
+    const description = product.querySelector('.product-description');
+    const isVisible = description.style.display === 'block';
+    
+    // Закрити всі інші описи
+    document.querySelectorAll('.product-description').forEach(desc => {
+        if (desc !== description) {
+            desc.style.display = 'none';
+        }
+    });
+    
+    description.style.display = isVisible ? 'none' : 'block';
+    button.innerHTML = isVisible ? 
+        '<i class="fas fa-info-circle"></i>' : 
+        '<i class="fas fa-times"></i>';
+}
+
+function toggleVideo(button) {
+    const wrapper = button.nextElementSibling;
+    const isVisible = wrapper.style.display === 'block';
+    
+    if (isVisible) {
+        wrapper.style.display = 'none';
+        button.innerHTML = `<i class="fas fa-play"></i> ${currentLanguage === 'uk' ? 'Переглянути відео' : 'Посмотреть видео'}`;
+    } else {
+        wrapper.style.display = 'block';
+        button.innerHTML = `<i class="fas fa-times"></i> ${currentLanguage === 'uk' ? 'Закрити відео' : 'Закрыть видео'}`;
+    }
+}
+
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    // Оновлення активних кнопок
+    filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if ((category === 'all' && btn.textContent.includes(currentLanguage === 'uk' ? 'Всі' : 'Все')) ||
+            (category === 'new' && btn.textContent.includes('Новинки'))) {
+            btn.classList.add('active');
+        }
+    });
+    
+    products.forEach(product => {
+        if (category === 'all' || product.dataset.category.includes(category)) {
+            product.style.display = 'block';
+            setTimeout(() => {
+                product.style.opacity = '1';
+                product.style.transform = 'translateY(0)';
+            }, 100);
+        } else {
+            product.style.opacity = '0';
+            product.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                product.style.display = 'none';
+            }, 300);
+        }
+    });
+}
+
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+function toggleCart() {
+    const cartContainer = document.getElementById('cart-container');
+    cartVisible = !cartVisible;
+    cartContainer.classList.toggle('show');
+}
+
+function showCartTemporarily() {
+    const cartContainer = document.getElementById('cart-container');
+    cartVisible = true;
+    cartContainer.classList.add('show');
+    
+    setTimeout(() => {
+        if (cartVisible) {
+            cartVisible = false;
+            cartContainer.classList.remove('show');
+        }
+    }, 3000);
+}
+
+// ГАЛЕРЕЯ ФОТО
+function changePhoto(galleryId, index) {
+    const gallery = document.querySelector(`[data-gallery-id="${galleryId}"]`);
+    const images = gallery.querySelectorAll('img');
+    const buttons = gallery.parentElement.querySelectorAll('.gallery-btn');
+    const previews = gallery.parentElement.querySelectorAll('.preview-img');
+    
+    // Скрыть все фото
+    images.forEach(img => img.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+    previews.forEach(preview => preview.classList.remove('active'));
+    
+    // Показать выбранное фото
+    images[index].classList.add('active');
+    buttons[index].classList.add('active');
+    if (previews[index]) previews[index].classList.add('active');
+}
+
+function openGallery(galleryId, startIndex) {
+    const gallery = document.querySelector(`[data-gallery-id="${galleryId}"]`);
+    const images = gallery.querySelectorAll('img');
+    const modal = document.getElementById('gallery-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalControls = document.getElementById('modal-controls');
+    
+    // Сохраняем данные галереи
+    currentGallery.id = galleryId;
+    currentGallery.images = Array.from(images).map(img => img.src);
+    currentGallery.currentIndex = startIndex;
+    
+    // Показываем выбранное фото
+    modalImg.src = currentGallery.images[startIndex];
+    
+    // Создаем контролы для модального окна
+    modalControls.innerHTML = '';
+    currentGallery.images.forEach((_, index) => {
+        const btn = document.createElement('button');
+        btn.className = `modal-gallery-btn ${index === startIndex ? 'active' : ''}`;
+        btn.onclick = () => changeModalPhotoTo(index);
+        modalControls.appendChild(btn);
+    });
+    
+    // Показываем модальное окно
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeGallery() {
+    const modal = document.getElementById('gallery-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function changeModalPhoto(direction) {
+    const newIndex = currentGallery.currentIndex + direction;
+    
+    if (newIndex >= 0 && newIndex < currentGallery.images.length) {
+        currentGallery.currentIndex = newIndex;
+        const modalImg = document.getElementById('modal-img');
+        const modalButtons = document.querySelectorAll('.modal-gallery-btn');
+        
+        modalImg.src = currentGallery.images[newIndex];
+        modalButtons.forEach((btn, index) => {
+            btn.classList.toggle('active', index === newIndex);
+        });
+    }
+}
+
+function changeModalPhotoTo(index) {
+    if (index >= 0 && index < currentGallery.images.length) {
+        currentGallery.currentIndex = index;
+        const modalImg = document.getElementById('modal-img');
+        const modalButtons = document.querySelectorAll('.modal-gallery-btn');
+        
+        modalImg.src = currentGallery.images[index];
+        modalButtons.forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+        });
+    }
+}
+
+// Закрытие модального окна при клике вне изображения
+window.onclick = function(event) {
+    const modal = document.getElementById('gallery-modal');
+    if (event.target == modal) {
+        closeGallery();
+    }
+};
+
+// Управление галереей с клавиатуры
+document.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('gallery-modal');
+    if (modal.style.display === 'block') {
+        if (event.key === 'Escape') {
+            closeGallery();
+        } else if (event.key === 'ArrowLeft') {
+            changeModalPhoto(-1);
+        } else if (event.key === 'ArrowRight') {
+            changeModalPhoto(1);
+        }
+    }
+});
+
+// Закрытие корзины при клике вне её
+document.addEventListener('click', function(event) {
+    const cartContainer = document.getElementById('cart-container');
+    const cartToggle = document.querySelector('.cart-toggle');
+    const youtubeButton = document.querySelector('.youtube-button');
+    
+    if (!cartContainer.contains(event.target) && !cartToggle.contains(event.target) && !youtubeButton.contains(event.target)) {
+        cartVisible = false;
+        cartContainer.classList.remove('show');
+    }
+});
+
+// Инициализация
+document.addEventListener('DOMContentLoaded', () => {
+    // Загружаем сохраненный язык
+    const savedLanguage = localStorage.getItem('grapeLanguage');
+    if (savedLanguage) {
+        changeLanguage(savedLanguage);
+    }
+    
+    // Инициализируем корзину
+    renderCart();
+    
+    // Завантаження з localStorage
+    const savedCart = localStorage.getItem('grapeCart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        renderCart();
+    }
+    
+    // Збереження в localStorage при зміні
+    setInterval(() => {
+        localStorage.setItem('grapeCart', JSON.stringify(cart));
+    }, 1000);
+});
+</script>
+
+</body>
+</html>
